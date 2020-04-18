@@ -1,0 +1,28 @@
+{
+  "words" : {
+    "word1" : {
+      "word" : "computer",
+      "kind" : "noun",
+      "mean" : "máy vi tính",
+	  "example": "I need some advice on which computer to buy."
+    },
+    "word2" : {
+       "word" : "smile",
+      "kind" : "noun",
+      "mean" : "nụ cười",
+	  "example": "She has a nice smile."
+    },
+    "word3" : {
+      "word" : "sing",
+      "kind" : "verd",
+      "mean" : "ca, hát",
+	  "example": "She sang her baby to sleep every night."
+    },
+    "word4" : {
+      "word" : "successful",
+      "kind" : "adjective",
+      "mean" : "có thành tựu, có kết quả",
+	  "example": "She runs a very successful computer business"
+    }
+  }
+}
