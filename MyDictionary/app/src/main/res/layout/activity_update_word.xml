@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lbHeadUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00BFA5"
+        android:gravity="center"
+        android:text="Cập nhật từ"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/lbEdtWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Từ vựng"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txtEdtWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Chỉnh sửa từ"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/lblEdtKind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Từ loại"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txtEdtKind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Thay đổi từ loại"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/lbEdtMean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nghĩa của từ"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txtEdtMean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nghĩa của từ"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/lbEdtExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ví dụ"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txtEdtExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Đặt một câu với từ mới"
+        android:inputType="textPersonName" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#009688"
+            android:onClick="updateWord"
+            android:text="Cập nhật"
+            android:layout_margin="10dp"
+            android:textColor="#A7FFEB"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="#009688"
+            android:onClick="deleteWord"
+            android:text="Xóa"
+            android:textColor="#A7FFEB"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
