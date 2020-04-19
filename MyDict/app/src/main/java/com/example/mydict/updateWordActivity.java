@@ -1,13 +1,22 @@
 package com.example.mydict;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -77,6 +86,9 @@ public class updateWordActivity extends AppCompatActivity {
         myRef.child(wordID).child("mean").setValue(mean);
         myRef.child(wordID).child("example").setValue(example);
         finish();
+        Toast toast =  Toast.makeText(this,"Chỉnh sửa từ thành công!",Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 
     //Xoa từ khỏi csdl
@@ -85,7 +97,26 @@ public class updateWordActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //Kết nối tới node có tên là words (node này do ta định nghĩa trong CSDL Firebase)
         DatabaseReference myRef = database.getReference("words");
-        myRef.child(wordID).removeValue();
+        myRef.child(wordID).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast toast;
+                toast = Toast.makeText(getApplicationContext(), "Xoá thành công!",   Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast toast;
+                        toast = Toast.makeText(getApplicationContext(), "Xoá không thành công!",   Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                    }
+                });
+
         finish();
     }
     //Lấy id các edit text
@@ -94,5 +125,24 @@ public class updateWordActivity extends AppCompatActivity {
         txtKind=findViewById(R.id.edtKind);
         txtMean=findViewById(R.id.edtMean);
         txtExample=findViewById(R.id.edtExample);
+    }
+
+    //Tạo menu với item thêm từ
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu_sub,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    // Bắt sự kiện click vào menu item thêm từ
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.mnBack)
+        {
+            //mở màn hình thêm ở đây
+            Intent intent=new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

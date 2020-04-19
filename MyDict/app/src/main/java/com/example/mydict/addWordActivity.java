@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -49,6 +53,9 @@ public class addWordActivity extends AppCompatActivity {
             myRef.child(wordId).child("example").setValue(example);
 
             finish();
+            Toast toast =  Toast.makeText(this,"Thêm từ mới thành công!",Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
         }
         catch (Exception ex)
         {
@@ -56,6 +63,23 @@ public class addWordActivity extends AppCompatActivity {
         }
     }
 
-
+    //Tạo menu với item thêm từ
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu_sub,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    // Bắt sự kiện click vào menu item thêm từ
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.mnBack)
+        {
+            //mở màn hình thêm ở đây
+            Intent intent=new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }
