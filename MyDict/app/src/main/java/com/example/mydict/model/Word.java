@@ -6,6 +6,7 @@ public class Word {
     private String kind;
     private String mean;
     private String example;
+    private String status;
 
     public String getWordId() {
         return wordId;
@@ -46,5 +47,13 @@ public class Word {
 
     public void setExample(String example) {
         this.example = example;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ import java.util.HashMap;
 
 public class updateWordActivity extends AppCompatActivity {
     EditText  txtWord, txtKind, txtMean, txtExample;
+    CheckBox cbStatus;
     String wordID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,10 @@ public class updateWordActivity extends AppCompatActivity {
                     txtKind.setText(hashMap.get("kind").toString());
                     txtMean.setText(hashMap.get("mean").toString());
                     txtExample.setText(hashMap.get("example").toString());
+                    if (Integer.parseInt(hashMap.get("status").toString()) == 1){
+                        cbStatus.setChecked(true);
+                    }
+                    else cbStatus.setChecked(false);
                 }
                 catch (Exception ex)
                 {
@@ -78,6 +84,16 @@ public class updateWordActivity extends AppCompatActivity {
         String kind=txtKind.getText().toString();
         String mean=txtMean.getText().toString();
         String example=txtExample.getText().toString();
+        String status="0";
+        if(cbStatus.isChecked()){
+            status ="1";
+        }
+        if(wd.isEmpty() || mean.isEmpty()){
+            Toast toast =  Toast.makeText(this,"Không được để từ, từ loại và nghĩa của từ trống!",Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+            return;
+        }
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //Kết nối tới node có tên là words (node này do ta định nghĩa trong CSDL Firebase)
         DatabaseReference myRef = database.getReference("words");
@@ -85,6 +101,7 @@ public class updateWordActivity extends AppCompatActivity {
         myRef.child(wordID).child("kind").setValue(kind);
         myRef.child(wordID).child("mean").setValue(mean);
         myRef.child(wordID).child("example").setValue(example);
+        myRef.child(wordID).child("status").setValue(status);
         finish();
         Toast toast =  Toast.makeText(this,"Chỉnh sửa từ thành công!",Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
@@ -125,6 +142,7 @@ public class updateWordActivity extends AppCompatActivity {
         txtKind=findViewById(R.id.edtKind);
         txtMean=findViewById(R.id.edtMean);
         txtExample=findViewById(R.id.edtExample);
+        cbStatus=findViewById(R.id.cbStatus);
     }
 
     //Tạo menu với item thêm từ

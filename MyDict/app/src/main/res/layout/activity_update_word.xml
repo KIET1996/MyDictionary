@@ -15,7 +15,18 @@
         android:gravity="center"
         android:text="Cập nhật từ"
         android:textColor="#FFFFFF"
+        android:padding="10dp"
         android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/cbStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Đã thuộc từ"
+        android:textColor="#D32F2F"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/lbEdtWord"

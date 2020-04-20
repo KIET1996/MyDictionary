@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView lvContact;
+    ListView lvWord;
     WordAdapter adapter;
     int count=0;
     @Override
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Bắt sự kiện click vào các item listview
     private void addEvents() {
-        lvContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvWord.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Word word = adapter.getItem(position);
@@ -65,7 +66,22 @@ public class MainActivity extends AppCompatActivity {
                     String key = dss.getKey();
                     count++;
                     word.setWordId(key);
-                    adapter.add(word);
+                    String temp;
+                    int divide = 0;
+                    try {
+                        temp = word.getStatus();
+                        divide = Integer.parseInt(temp);
+                    }
+                    catch (Exception ex){
+                        Log.e("LOI GI NE == ", " " + ex);
+                        Log.e("NO LA DANG NAY == ", " " + word.getStatus());
+                    }
+
+                    if( divide == 0){
+                        adapter.add(word);
+                    }
+
+
                 }
                 count++;
             }
@@ -98,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        lvContact=findViewById(R.id.lvContact);
+        lvWord=findViewById(R.id.lvWord);
         adapter=new WordAdapter(this,R.layout.item);
-        lvContact.setAdapter(adapter);
+        lvWord.setAdapter(adapter);
     }
 }

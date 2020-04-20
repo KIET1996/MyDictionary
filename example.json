@@ -4,25 +4,29 @@
       "word" : "computer",
       "kind" : "noun",
       "mean" : "máy vi tính",
-	  "example": "I need some advice on which computer to buy."
+	  "example": "I need some advice on which computer to buy.",
+	  "status":"0"
     },
     "word2" : {
       "word" : "smile",
       "kind" : "noun",
       "mean" : "nụ cười",
-	  "example": "She has a nice smile."
+	  "example": "She has a nice smile.",
+	  "status":"0"
     },
     "word3" : {
       "word" : "sing",
       "kind" : "verd",
       "mean" : "ca, hát",
-	  "example": "She sang her baby to sleep every night."
+	  "example": "She sang her baby to sleep every night.",
+	  "status":"1"
     },
     "word4" : {
       "word" : "successful",
       "kind" : "adjective",
       "mean" : "có thành tựu, có kết quả",
-	  "example": "She runs a very successful computer business"
+	  "example": "She runs a very successful computer business",
+	  "status":"1"
     }
   }
 }

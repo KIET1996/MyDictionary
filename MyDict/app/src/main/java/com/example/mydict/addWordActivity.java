@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,8 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class addWordActivity extends AppCompatActivity {
     EditText txtWord, txtKind, txtMean, txtExample;
-    String count;
-    WordAdapter adapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,19 +44,32 @@ public class addWordActivity extends AppCompatActivity {
             Intent intent = getIntent();
             int count = intent.getIntExtra("wordid",0);
             String wordId="word"+ count;
-            String wd=txtWord.getText().toString();
+            String wd = txtWord.getText().toString();
             String kind = txtKind.getText().toString();
             String mean = txtMean.getText().toString();
             String example = txtExample.getText().toString();
-            myRef.child(wordId).child("word").setValue(wd);
-            myRef.child(wordId).child("kind").setValue(kind);
-            myRef.child(wordId).child("mean").setValue(mean);
-            myRef.child(wordId).child("example").setValue(example);
+            if(wd.isEmpty() || mean.isEmpty() || kind.isEmpty()){
+                Toast toast =  Toast.makeText(this,"Không được để từ, từ loại và nghĩa của từ trống!",Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+                return;
+            }
+            else{
+                String status = "0";
+                myRef.child(wordId).child("word").setValue(wd);
+                myRef.child(wordId).child("kind").setValue(kind);
+                myRef.child(wordId).child("mean").setValue(mean);
+                myRef.child(wordId).child("example").setValue(example);
+                myRef.child(wordId).child("status").setValue(status);
 
-            finish();
-            Toast toast =  Toast.makeText(this,"Thêm từ mới thành công!",Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
+                finish();
+                Toast toast =  Toast.makeText(this,"Thêm từ mới thành công!",Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+
+
+
         }
         catch (Exception ex)
         {
