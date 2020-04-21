@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">>
+    <item
+        android:id="@+id/mnBackOld"
+        android:icon="@drawable/ic_arrow_back_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Back">
+    </item>
+    <item
+        android:id="@+id/mnOldAdd"
+        android:title="Thêm từ" />
+    <item
+        android:id="@+id/mnNewTab"
+        android:title="Chưa thuộc"/>
+</menu>

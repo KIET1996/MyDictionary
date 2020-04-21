@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class addWordActivity extends AppCompatActivity {
     EditText txtWord, txtKind, txtMean, txtExample;
-
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,9 +89,9 @@ public class addWordActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.mnBack)
         {
-            //mở màn hình thêm ở đây
             Intent intent=new Intent(this, MainActivity.class);
             startActivity(intent);
+
         }
         return super.onOptionsItemSelected(item);
     }

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     String key = dss.getKey();
                     count++;
                     word.setWordId(key);
-                    String temp;
+            /*        String temp;
                     int divide = 0;
                     try {
                         temp = word.getStatus();
@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
                         Log.e("NO LA DANG NAY == ", " " + word.getStatus());
                     }
 
-                    if( divide == 0){
+                    if( divide == 0){ */
                         adapter.add(word);
-                    }
+      //              }
 
 
                 }
@@ -105,12 +105,23 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.mnAdd)
         {
-        //mở màn hình thêm ở đây
+            //mở màn hình thêm ở đây
             Intent intent=new Intent(MainActivity.this, addWordActivity.class);
             intent.putExtra("wordid", count);
             startActivity(intent);
         }
+        if(item.getItemId()==R.id.mnOld)
+        {
+            //mở màn hình thêm ở đây
+            Intent intent = new Intent(MainActivity.this, oldWordActivity.class);
+            startActivity(intent);
+        }
+        if(item.getItemId()==R.id.mnNew)
+        {
+
+        }
         return super.onOptionsItemSelected(item);
+
     }
 
     private void addControls() {
@@ -118,4 +129,6 @@ public class MainActivity extends AppCompatActivity {
         adapter=new WordAdapter(this,R.layout.item);
         lvWord.setAdapter(adapter);
     }
+
+
 }
