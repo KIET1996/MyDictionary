@@ -21,8 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class oldWordActivity extends AppCompatActivity {
-    ListView lvOldWord;
+public class newWordActivity extends AppCompatActivity {
+    ListView lvNewWord;
     WordAdapter adapter;
     int count=0;
     @Override
@@ -31,18 +31,17 @@ public class oldWordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         addControls();
         getWordsFromFirebase();
-        addEvents();
+        addEvents();;
     }
-
 
     //Bắt sự kiện click vào các item listview
     private void addEvents() {
-        lvOldWord.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvNewWord.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Word word = adapter.getItem(position);
                 String key = word.getWordId();
-                Intent intent=new Intent(oldWordActivity.this, updateWordActivity.class);
+                Intent intent=new Intent(newWordActivity.this, updateWordActivity.class);
                 intent.putExtra("KEY",key);
                 startActivity(intent);
             }
@@ -76,7 +75,7 @@ public class oldWordActivity extends AppCompatActivity {
                         Log.e("NO LA DANG NAY == ", " " + word.getStatus());
                     }
 
-                    if( divide == 1){
+                    if( divide == 0){
                         adapter.add(word);
                     }
                 }
@@ -85,40 +84,37 @@ public class oldWordActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
 
     private void addControls() {
-        lvOldWord = findViewById(R.id.lvWord);
+        lvNewWord = findViewById(R.id.lvWord);
         adapter = new WordAdapter(this, R.layout.item);
-        lvOldWord.setAdapter(adapter);
+        lvNewWord.setAdapter(adapter);
     }
 
-    //Tạo menu với item thêm từ
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater=getMenuInflater();
-        menuInflater.inflate(R.menu.menu_old,menu);
+        menuInflater.inflate(R.menu.menu_new,menu);
         return super.onCreateOptionsMenu(menu);
     }
     // Bắt sự kiện click vào menu item thêm từ
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.mnOldAdd)
+        if(item.getItemId()==R.id.mnNewAdd)
         {
             //mở màn hình thêm ở đây
             Intent intent=new Intent(this, addWordActivity.class);
             intent.putExtra("wordid", count);
             startActivity(intent);
         }
-        if(item.getItemId()==R.id.mnNewTab)
+        if(item.getItemId()==R.id.mnOldTab)
         {
-            Intent intent = new Intent(this, newWordActivity.class);
+            Intent intent = new Intent(this, oldWordActivity.class);
             startActivity(intent);
         }
-        if(item.getItemId()==R.id.mnBackOld)
+        if(item.getItemId()==R.id.mnBackNew)
         {
             //mở màn hình thêm ở đây
             Intent intent = new Intent(this, MainActivity.class);

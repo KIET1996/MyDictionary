@@ -61,12 +61,14 @@
         android:id="@+id/textStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:gravity="right"
         android:text="TextView"
-        android:layout_marginBottom="10dp"
         android:textColor="#D32F2F"
         android:textSize="24sp"
         android:textStyle="italic" />
+
+
 
 
 </LinearLayout>
