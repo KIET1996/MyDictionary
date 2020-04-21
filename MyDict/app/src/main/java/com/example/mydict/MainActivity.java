@@ -66,22 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     String key = dss.getKey();
                     count++;
                     word.setWordId(key);
-            /*        String temp;
-                    int divide = 0;
-                    try {
-                        temp = word.getStatus();
-                        divide = Integer.parseInt(temp);
-                    }
-                    catch (Exception ex){
-                        Log.e("LOI GI NE == ", " " + ex);
-                        Log.e("NO LA DANG NAY == ", " " + word.getStatus());
-                    }
-
-                    if( divide == 0){ */
-                        adapter.add(word);
-      //              }
-
-
+                    adapter.add(word);
                 }
                 count++;
             }
@@ -118,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if(item.getItemId()==R.id.mnNew)
         {
-
+            Intent intent = new Intent(MainActivity.this, newWordActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
 
