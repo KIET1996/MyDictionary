@@ -68,7 +68,4 @@
         android:textSize="24sp"
         android:textStyle="italic" />
 
-
-
-
 </LinearLayout>

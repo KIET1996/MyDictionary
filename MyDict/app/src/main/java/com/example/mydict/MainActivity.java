@@ -6,12 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.mydict.adapter.WordAdapter;
 import com.example.mydict.model.Word;
@@ -26,13 +30,14 @@ public class MainActivity extends AppCompatActivity {
     ListView lvWord;
     WordAdapter adapter;
     int count=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addControls();
         getWordsFromFirebase();
-        addEvents();;
+        addEvents();
 
     }
 
@@ -114,7 +119,10 @@ public class MainActivity extends AppCompatActivity {
         lvWord=findViewById(R.id.lvWord);
         adapter=new WordAdapter(this,R.layout.item);
         lvWord.setAdapter(adapter);
+
     }
+
+
 
 
 }

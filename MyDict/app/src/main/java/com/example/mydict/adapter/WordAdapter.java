@@ -1,9 +1,11 @@
 package com.example.mydict.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         this.resource=resource;
     }
 
+    @SuppressLint("SetTextI18n")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -31,6 +34,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView txtMean=custom.findViewById(R.id.textMean);
         TextView txtExam=custom.findViewById(R.id.textExam);
         TextView txtStatus=custom.findViewById(R.id.textStatus);
+
         Word word =getItem(position);
         txtWord.setText(word.getWord());
         txtKind.setText(word.getKind());
