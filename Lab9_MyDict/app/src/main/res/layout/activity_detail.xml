@@ -65,6 +65,21 @@
         android:id="@+id/detailExample"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textLongMessage"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Từ đông nghĩa"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/detailSyn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="18sp" />
 
@@ -98,9 +113,9 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="#303F9F"
-            android:onClick="deleteWord"
             android:layout_margin="10dp"
+            android:background="#D32F2F"
+            android:onClick="deleteWord"
             android:text="Xóa từ"
             android:textColor="#A7FFEB"
             android:textSize="24sp"

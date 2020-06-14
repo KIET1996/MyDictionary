@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,12 +12,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.mydict.adapter.WordAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class addWordActivity extends AppCompatActivity {
-    EditText txtWord, txtKind, txtMean, txtExample;
+    EditText txtWord, txtKind, txtMean, txtExample, txtSyn;
     
 
     @Override
@@ -32,6 +30,7 @@ public class addWordActivity extends AppCompatActivity {
         txtWord = findViewById(R.id.addWord);
         txtKind = findViewById(R.id.addKind);
         txtMean = findViewById(R.id.addMean);
+        txtSyn  = findViewById(R.id.addSyn);
         txtExample = findViewById(R.id.addExample);
     }
 
@@ -47,6 +46,7 @@ public class addWordActivity extends AppCompatActivity {
             String wd = txtWord.getText().toString();
             String kind = txtKind.getText().toString();
             String mean = txtMean.getText().toString();
+            String syn = txtSyn.getText().toString();
             String example = txtExample.getText().toString();
             if(wd.isEmpty() || mean.isEmpty() || kind.isEmpty()){
                 Toast toast =  Toast.makeText(this,"Không được để từ, từ loại và nghĩa của từ trống!",Toast.LENGTH_LONG);
@@ -59,6 +59,7 @@ public class addWordActivity extends AppCompatActivity {
                 myRef.child(wordId).child("word").setValue(wd);
                 myRef.child(wordId).child("kind").setValue(kind);
                 myRef.child(wordId).child("mean").setValue(mean);
+                myRef.child(wordId).child("synonym").setValue(syn);
                 myRef.child(wordId).child("example").setValue(example);
                 myRef.child(wordId).child("status").setValue(status);
 

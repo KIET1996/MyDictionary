@@ -1,24 +1,16 @@
 package com.example.mydict;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class updateWordActivity extends AppCompatActivity {
-    TextView txtWord, txtKind, txtMean, txtExample;
+    TextView txtWord, txtKind, txtMean, txtExample, txtSyn;
     CheckBox cbStatus;
     String wordID;
     @Override
@@ -61,6 +53,7 @@ public class updateWordActivity extends AppCompatActivity {
                     txtWord.setText(hashMap.get("word").toString());
                     txtKind.setText(hashMap.get("kind").toString());
                     txtMean.setText(hashMap.get("mean").toString());
+                    txtSyn.setText(hashMap.get("synonym").toString());
                     txtExample.setText(hashMap.get("example").toString());
 
                     if (Integer.parseInt(hashMap.get("status").toString()) == 1){
@@ -87,6 +80,7 @@ public class updateWordActivity extends AppCompatActivity {
         String wd=txtWord.getText().toString();
         String kind=txtKind.getText().toString();
         String mean=txtMean.getText().toString();
+        String syn=txtSyn.getText().toString();
         String example=txtExample.getText().toString();
         String status="0";
         if(cbStatus.isChecked()){
@@ -104,9 +98,19 @@ public class updateWordActivity extends AppCompatActivity {
         myRef.child(wordID).child("word").setValue(wd);
         myRef.child(wordID).child("kind").setValue(kind);
         myRef.child(wordID).child("mean").setValue(mean);
+        myRef.child(wordID).child("synonym").setValue(syn);
         myRef.child(wordID).child("example").setValue(example);
         myRef.child(wordID).child("status").setValue(status);
-        finish();
+
+        Intent intent=getIntent();
+        wordID = intent.getStringExtra("KEY");
+        String ls = intent.getStringExtra("detail");
+
+        Intent itt=new Intent(updateWordActivity.this, detailActivity.class);
+        itt.putExtra("KEY", wordID);
+        itt.putExtra("detail",ls);
+        startActivity(itt);
+        // finish();
 
         Toast toast =  Toast.makeText(this,"Chỉnh sửa từ thành công!",Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
@@ -115,8 +119,6 @@ public class updateWordActivity extends AppCompatActivity {
 
     //Trở về trang detail
     public void cancelUpdate(View view) {
-//        Intent intent = new Intent(updateWordActivity.this, detailActivity.class);
-//        startActivity(intent);
         finish();
 
     }
@@ -126,43 +128,9 @@ public class updateWordActivity extends AppCompatActivity {
         txtKind=findViewById(R.id.edtKind);
         txtMean=findViewById(R.id.edtMean);
         txtExample=findViewById(R.id.edtExample);
+        txtSyn=findViewById(R.id.edtSyn);
         cbStatus=findViewById(R.id.cbStatus);
     }
 
 
-//    //Tạo menu với item thêm từ
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater menuInflater=getMenuInflater();
-//        menuInflater.inflate(R.menu.menu_sub,menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-    // Bắt sự kiện click vào menu item trở về
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-////        Intent intt = getIntent();
-////        String sr = intt.getStringExtra("update");
-//
-//        if(item.getItemId()==R.id.mnBack)
-//        {
-//            Intent intent = new Intent(updateWordActivity.this, detailActivity.class);
-//            startActivity(intent);
-//            //mở màn hình thêm ở đây
-////            if (sr.equals("main")) {
-////                Intent intent = new Intent(this, MainActivity.class);
-////                startActivity(intent);
-////            }
-//
-////            if (sr.equals("oldWord")) {
-////                Intent intent = new Intent(this, oldWordActivity.class);
-////                startActivity(intent);
-////            }
-////
-////            if (sr.equals("allWord")) {
-////                Intent intent = new Intent(this, newWordActivity.class);
-////                startActivity(intent);
-////            }
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 }

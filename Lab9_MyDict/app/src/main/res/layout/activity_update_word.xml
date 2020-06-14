@@ -93,7 +93,24 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Đặt một câu với từ mới"
-        android:inputType="textPersonName"
+        android:inputType="textLongMessage"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Từ đồng nghĩa "
+        android:textColor="#512DA8"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtSyn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập từ đồng nghĩa"
+        android:inputType="textLongMessage"
         android:textSize="24sp" />
 
     <LinearLayout
@@ -119,13 +136,14 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="#303F9F"
-            android:onClick="cancelUpdate"
             android:layout_margin="10dp"
+            android:background="#D32F2F"
+            android:onClick="cancelUpdate"
             android:text="Hủy"
             android:textColor="#A7FFEB"
             android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>
+
 </LinearLayout>

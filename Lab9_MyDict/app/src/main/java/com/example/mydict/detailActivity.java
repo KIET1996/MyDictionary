@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class detailActivity extends AppCompatActivity {
-    TextView txtWord, txtKind, txtMean, txtExample, txtStatus;
+    TextView txtWord, txtKind, txtMean, txtExample, txtSyn, txtStatus;
     CheckBox cbStatus;
     String wordID;
     @Override
@@ -60,6 +60,7 @@ public class detailActivity extends AppCompatActivity {
                     txtWord.setText(hashMap.get("word").toString());
                     txtKind.setText(hashMap.get("kind").toString());
                     txtMean.setText(hashMap.get("mean").toString());
+                    txtSyn.setText(hashMap.get("synonym").toString());
                     txtExample.setText(hashMap.get("example").toString());
 
                     if (Integer.parseInt(hashMap.get("status").toString()) == 1){
@@ -85,10 +86,13 @@ public class detailActivity extends AppCompatActivity {
     public void updateScreen(View view) {
         Intent intent=getIntent();
         wordID = intent.getStringExtra("KEY");
+
+        String ls = intent.getStringExtra("detail");
         Intent itt=new Intent(detailActivity.this, updateWordActivity.class);
         itt.putExtra("KEY", wordID);
-        itt.putExtra("detail", "main");
+        itt.putExtra("detail", ls);
         startActivity(itt);
+
 
     }
 
@@ -126,6 +130,7 @@ public class detailActivity extends AppCompatActivity {
         txtKind=findViewById(R.id.detailKind);
         txtMean=findViewById(R.id.detailMean);
         txtExample=findViewById(R.id.detailExample);
+        txtSyn=findViewById(R.id.detailSyn);
         txtStatus=findViewById(R.id.detailStatus);
     }
 

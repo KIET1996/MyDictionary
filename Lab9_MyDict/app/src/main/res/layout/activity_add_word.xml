@@ -85,6 +85,23 @@
         android:inputType="textPersonName"
         android:textSize="24sp" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Từ đồng nghĩa"
+        android:textColor="#512DA8"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/addSyn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập từ đồng nghĩa"
+        android:inputType="textLongMessage"
+        android:textSize="24sp" />
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="150dp"
