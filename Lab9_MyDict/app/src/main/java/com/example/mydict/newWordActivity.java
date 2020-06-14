@@ -42,9 +42,9 @@ public class newWordActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Word word = adapter.getItem(position);
                 String key = word.getWordId();
-                Intent intent=new Intent(newWordActivity.this, updateWordActivity.class);
+                Intent intent=new Intent(newWordActivity.this, detailActivity.class);
                 intent.putExtra("KEY",key);
-                intent.putExtra("update","allWord");
+                intent.putExtra("detail","allWord");
                 startActivity(intent);
             }
         });

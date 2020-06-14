@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".detailActivity"></activity>
         <activity android:name=".newWordActivity"></activity>
         <activity android:name=".oldWordActivity" />
         <activity android:name=".updateWordActivity" />

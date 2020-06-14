@@ -1,131 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".updateWordActivity">
+    android:paddingHorizontal="20dp">
 
     <TextView
-        android:id="@+id/lbHeadUpdate"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#0288D1"
-        android:gravity="center"
-        android:text="Cập nhật từ"
-        android:textColor="#FFFFFF"
-        android:padding="10dp"
-        android:textSize="30sp" />
-
-    <CheckBox
-        android:id="@+id/cbStatus"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="#1976D2"
         android:gravity="center"
-        android:text="Đã thuộc từ"
-        android:textColor="#D32F2F"
+        android:text="Chi tiết từ"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/detailWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/lbEdtWord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Từ "
-        android:textColor="#512DA8"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/edtWord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nhập lại từ mới ở đây"
-        android:inputType="textPersonName"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/lbEdtKind"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Từ loại"
-        android:textColor="#512DA8"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/edtKind"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Ví dụ noun, adjective, verb,.."
-        android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/lbEdtMean"
+        android:id="@+id/detailKind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nghĩa của từ"
-        android:textColor="#512DA8"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/edtMean"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nghĩa của từ"
-        android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:text="TextView"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/lbEdiExample"
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nghĩa từ"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/detailMean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/ttt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ví dụ"
-        android:textColor="#512DA8"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/edtExample"
+    <TextView
+        android:id="@+id/detailExample"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Đặt một câu với từ mới"
-        android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:text="TextView"
+        android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/detailStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:textColor="#D32F2F"
+        android:textSize="18sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btnSave"
+            android:id="@+id/btnUpdateScreen"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#303F9F"
-            android:onClick="updateWord"
-            android:text="Lưu"
+            android:onClick="updateScreen"
+            android:text="Cập nhật"
             android:layout_margin="10dp"
             android:textColor="#A7FFEB"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnCancel"
+            android:id="@+id/btnDelete"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#303F9F"
-            android:onClick="cancelUpdate"
+            android:onClick="deleteWord"
             android:layout_margin="10dp"
-            android:text="Hủy"
+            android:text="Xóa từ"
             android:textColor="#A7FFEB"
             android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>
+
 </LinearLayout>

@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Word word = adapter.getItem(position);
                 String key = word.getWordId();
-                Intent intent=new Intent(MainActivity.this, updateWordActivity.class);
+                Intent intent=new Intent(MainActivity.this, detailActivity.class);
                 intent.putExtra("KEY",key);
-                intent.putExtra("update", "main");
+                intent.putExtra("detail", "main");
                 startActivity(intent);
             }
         });
