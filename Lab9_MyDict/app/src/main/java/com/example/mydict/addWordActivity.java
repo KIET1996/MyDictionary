@@ -93,20 +93,21 @@ public class addWordActivity extends AppCompatActivity {
 
         if(item.getItemId()==R.id.mnBack)
         {
-            if (sr.equals("main")) {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-            }
-
-            if (sr.equals("oldWord")) {
-                Intent intent = new Intent(this, oldWordActivity.class);
-                startActivity(intent);
-            }
-
-            if (sr.equals("allWord")) {
-                Intent intent = new Intent(this, newWordActivity.class);
-                startActivity(intent);
-            }
+//            if (sr.equals("main")) {
+//                Intent intent = new Intent(this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//
+//            if (sr.equals("oldWord")) {
+//                Intent intent = new Intent(this, oldWordActivity.class);
+//                startActivity(intent);
+//            }
+//
+//            if (sr.equals("allWord")) {
+//                Intent intent = new Intent(this, newWordActivity.class);
+//                startActivity(intent);
+//            }
+            finish();
 
         }
         return super.onOptionsItemSelected(item);

@@ -44,14 +44,14 @@ public class oldWordActivity extends AppCompatActivity {
                 String key = word.getWordId();
                 Intent intent=new Intent(oldWordActivity.this, detailActivity.class);
                 intent.putExtra("KEY",key);
-                intent.putExtra("detail","oldWord");
+    //            intent.putExtra("detail","oldWord");
                 startActivity(intent);
             }
         });
 
     }
 
-    //Load data dưới dang custom view
+    //Load data dưới dang custom view -- chưa thuộc
     private void getWordsFromFirebase() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference("words");
@@ -113,7 +113,7 @@ public class oldWordActivity extends AppCompatActivity {
         {
             Intent intent=new Intent(this, addWordActivity.class);
             intent.putExtra("wordid", count);
-            intent.putExtra("main","oldWord");
+      //      intent.putExtra("main","oldWord");
             startActivity(intent);
         }
         //mở màn hình all word
@@ -127,17 +127,16 @@ public class oldWordActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.mnMain)
         {
             Intent intent = new Intent(this, MainActivity.class);
-
             startActivity(intent);
         }
 
         //mở màn hình chua thuoc word
         if(item.getItemId()==R.id.mnBackOld)
         {
-            Intent intent = new Intent(this, MainActivity.class);
-
-        startActivity(intent);
-    }
+//            Intent intent = new Intent(this, MainActivity.class);
+//            startActivity(intent);
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 }

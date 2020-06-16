@@ -170,20 +170,21 @@ public class detailActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.mnBack)
         {
             //mở màn hình thêm ở đây
-            if (sr.equals("main")) {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-            }
-
-            if (sr.equals("oldWord")) {
-                Intent intent = new Intent(this, oldWordActivity.class);
-                startActivity(intent);
-            }
-
-            if (sr.equals("allWord")) {
-                Intent intent = new Intent(this, newWordActivity.class);
-                startActivity(intent);
-            }
+//            if (sr.equals("main")) {
+//                Intent intent = new Intent(this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//
+//            if (sr.equals("oldWord")) {
+//                Intent intent = new Intent(this, oldWordActivity.class);
+//                startActivity(intent);
+//            }
+//
+//            if (sr.equals("allWord")) {
+//                Intent intent = new Intent(this, newWordActivity.class);
+//                startActivity(intent);
+//            }
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

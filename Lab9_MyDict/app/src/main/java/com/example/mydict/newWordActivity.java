@@ -51,7 +51,7 @@ public class newWordActivity extends AppCompatActivity {
 
     }
 
-    //Load data dưới dang custom view
+    //Load data dưới dang custom view -- all
     private void getWordsFromFirebase() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference("words");
@@ -66,20 +66,7 @@ public class newWordActivity extends AppCompatActivity {
                     String key = dss.getKey();
                     count++;
                     word.setWordId(key);
-//                    String temp;
-//                    int divide = 0;
-//                    try {
-//                        temp = word.getStatus();
-//                        divide = Integer.parseInt(temp);
-//                    }
-//                    catch (Exception ex){
-//                        Log.e("LOI GI NE == ", " " + ex);
-//                        Log.e("NO LA DANG NAY == ", " " + word.getStatus());
-//                    }
-
-                //    if( divide == 0){
-                        adapter.add(word);
-               //     }
+                    adapter.add(word);
                 }
                 count++;
             }
@@ -110,7 +97,7 @@ public class newWordActivity extends AppCompatActivity {
         {
             Intent intent=new Intent(this, addWordActivity.class);
             intent.putExtra("wordid", count);
-            intent.putExtra("main","allWord");
+        //    intent.putExtra("main","allWord");
             startActivity(intent);
         }
 
@@ -131,8 +118,9 @@ public class newWordActivity extends AppCompatActivity {
         //mở màn hình thêm ở đây
         if(item.getItemId()==R.id.mnBackNew)
         {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, MainActivity.class);
+//            startActivity(intent);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
