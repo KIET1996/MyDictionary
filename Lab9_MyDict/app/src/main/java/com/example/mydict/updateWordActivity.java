@@ -1,7 +1,10 @@
 package com.example.mydict;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +14,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -77,44 +82,63 @@ public class updateWordActivity extends AppCompatActivity {
 
     //Update từ lên csdl
     public void updateWord(View view) {
-        String wd=txtWord.getText().toString();
-        String kind=txtKind.getText().toString();
-        String mean=txtMean.getText().toString();
-        String syn=txtSyn.getText().toString();
-        String example=txtExample.getText().toString();
-        String status="0";
-        if(cbStatus.isChecked()){
-            status ="1";
-        }
-        if(wd.isEmpty() || mean.isEmpty()){
-            Toast toast =  Toast.makeText(this,"Không được để từ, từ loại và nghĩa của từ trống!",Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
-            return;
-        }
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //Kết nối tới node có tên là words (node này do ta định nghĩa trong CSDL Firebase)
-        DatabaseReference myRef = database.getReference("words");
-        myRef.child(wordID).child("word").setValue(wd);
-        myRef.child(wordID).child("kind").setValue(kind);
-        myRef.child(wordID).child("mean").setValue(mean);
-        myRef.child(wordID).child("synonym").setValue(syn);
-        myRef.child(wordID).child("example").setValue(example);
-        myRef.child(wordID).child("status").setValue(status);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Thông báo!");
+        builder.setMessage("Bạn thật sự muốn thay đổi từ này?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String wd=txtWord.getText().toString();
+                String kind=txtKind.getText().toString();
+                String mean=txtMean.getText().toString();
+                String syn=txtSyn.getText().toString();
+                String example=txtExample.getText().toString();
+                String status="0";
+                if(cbStatus.isChecked()){
+                    status ="1";
+                }
+                if(wd.isEmpty() || mean.isEmpty()){
+                    Toast toast =  Toast.makeText(getApplicationContext(),"Không được để từ, từ loại và nghĩa của từ trống!",Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                    return;
+                }
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //Kết nối tới node có tên là words (node này do ta định nghĩa trong CSDL Firebase)
+                DatabaseReference myRef = database.getReference("words");
+                myRef.child(wordID).child("word").setValue(wd);
+                myRef.child(wordID).child("kind").setValue(kind);
+                myRef.child(wordID).child("mean").setValue(mean);
+                myRef.child(wordID).child("synonym").setValue(syn);
+                myRef.child(wordID).child("example").setValue(example);
+                myRef.child(wordID).child("status").setValue(status);
 
-        Intent intent=getIntent();
-        wordID = intent.getStringExtra("KEY");
-        String ls = intent.getStringExtra("detail");
+                Intent intent=getIntent();
+                wordID = intent.getStringExtra("KEY");
+                String ls = intent.getStringExtra("detail");
 
-        Intent itt=new Intent(updateWordActivity.this, detailActivity.class);
-        itt.putExtra("KEY", wordID);
-        itt.putExtra("detail",ls);
-        startActivity(itt);
-        // finish();
+                Intent itt=new Intent(updateWordActivity.this, detailActivity.class);
+                itt.putExtra("KEY", wordID);
+                itt.putExtra("detail",ls);
+                startActivity(itt);
+                // finish();
 
-        Toast toast =  Toast.makeText(this,"Chỉnh sửa từ thành công!",Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.show();
+                Toast toast =  Toast.makeText(getApplicationContext(),"Chỉnh sửa từ thành công!",Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Hủy cập nhật!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.show();
+
     }
 
     //Trở về trang detail

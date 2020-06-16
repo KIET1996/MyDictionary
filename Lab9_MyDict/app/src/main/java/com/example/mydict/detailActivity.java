@@ -1,5 +1,7 @@
 package com.example.mydict;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +37,7 @@ public class detailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         addControls();
         getWorDetail();
+
     }
 
 
@@ -98,31 +101,48 @@ public class detailActivity extends AppCompatActivity {
 
     //Xoa từ khỏi csdl
     public void deleteWord(View view) {
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //Kết nối tới node có tên là words (node này do ta định nghĩa trong CSDL Firebase)
-        DatabaseReference myRef = database.getReference("words");
-        myRef.child(wordID).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Thông báo!");
+        builder.setMessage("Bạn thật sự muốn xóa từ này?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onSuccess(Void aVoid) {
-                Toast toast;
-                toast = Toast.makeText(getApplicationContext(), "Xoá thành công!",   Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
-            }
-        })
-                .addOnFailureListener(new OnFailureListener() {
-
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //Kết nối tới node có tên là words (node này do ta định nghĩa trong CSDL Firebase)
+                DatabaseReference myRef = database.getReference("words");
+                myRef.child(wordID).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onFailure(@NonNull Exception e) {
+                    public void onSuccess(Void aVoid) {
                         Toast toast;
-                        toast = Toast.makeText(getApplicationContext(), "Xoá không thành công!",   Toast.LENGTH_LONG);
+                        toast = Toast.makeText(getApplicationContext(), "Xóa từ thành công!",   Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     }
-                });
+                })
+                        .addOnFailureListener(new OnFailureListener() {
 
-        finish();
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast toast;
+                                toast = Toast.makeText(getApplicationContext(), "Xóa từ thành công!",   Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, 0);
+                                toast.show();
+                            }
+                        });
+
+                finish();
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Hủy hoạt động xóa!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.show();
     }
     //Lấy id các edit text
     private void addControls() {
