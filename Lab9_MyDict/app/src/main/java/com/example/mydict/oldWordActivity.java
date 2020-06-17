@@ -44,7 +44,7 @@ public class oldWordActivity extends AppCompatActivity {
                 String key = word.getWordId();
                 Intent intent=new Intent(oldWordActivity.this, detailActivity.class);
                 intent.putExtra("KEY",key);
-    //            intent.putExtra("detail","oldWord");
+                intent.putExtra("detail","oldWord");
                 startActivity(intent);
             }
         });
@@ -113,7 +113,7 @@ public class oldWordActivity extends AppCompatActivity {
         {
             Intent intent=new Intent(this, addWordActivity.class);
             intent.putExtra("wordid", count);
-      //      intent.putExtra("main","oldWord");
+            intent.putExtra("main","oldWord");
             startActivity(intent);
         }
         //mở màn hình all word

@@ -1,126 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="20dp"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:paddingHorizontal="20dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#1976D2"
-        android:gravity="center"
-        android:text="Chi tiết từ"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/detailWord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Từ loại"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/detailKind"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nghĩa từ"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/detailMean"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/ttt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ví dụ"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/detailExample"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textLongMessage"
-        android:text="TextView"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Từ đông nghĩa"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/detailSyn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/detailStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:textColor="#D32F2F"
-        android:textSize="18sp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btnUpdateScreen"
-            android:layout_width="150dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#303F9F"
-            android:onClick="updateScreen"
-            android:text="Cập nhật"
-            android:layout_margin="10dp"
-            android:textColor="#A7FFEB"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnDelete"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="#D32F2F"
-            android:onClick="deleteWord"
-            android:text="Xóa từ"
-            android:textColor="#A7FFEB"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#0288D1"
+                android:padding="10dp"
+                android:gravity="center"
+                android:text="Chi tiết từ"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/detailWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="30sp" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Từ loại"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/detailKind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nghĩa từ"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/detailMean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Từ đông nghĩa"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/detailSyn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/ttt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ví dụ"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/detailExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textShortMessage|textLongMessage|textMultiLine"
+                android:text="TextView"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/detailStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#D32F2F"
+                android:textSize="24sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnUpdateScreen"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="updateScreen"
+                    android:background="@drawable/custom_button"
+                    android:text="Cập nhật"
+                    android:layout_margin="10dp"
+                    android:textColor="#A7FFEB"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_cancel"
+                    android:onClick="deleteWord"
+                    android:text="Xóa từ"
+                    android:textColor="#A7FFEB"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>>
+</ScrollView>

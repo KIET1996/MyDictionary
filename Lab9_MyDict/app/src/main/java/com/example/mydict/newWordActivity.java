@@ -97,7 +97,7 @@ public class newWordActivity extends AppCompatActivity {
         {
             Intent intent=new Intent(this, addWordActivity.class);
             intent.putExtra("wordid", count);
-        //    intent.putExtra("main","allWord");
+            intent.putExtra("main","allWord");
             startActivity(intent);
         }
 
