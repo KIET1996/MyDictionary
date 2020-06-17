@@ -68,14 +68,15 @@ public class addWordActivity extends AppCompatActivity {
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             }
-
-
-
         }
         catch (Exception ex)
         {
             Toast.makeText(this,"Error:"+ex.toString(),Toast.LENGTH_LONG).show();
         }
+    }
+    //nut huy
+    public void buttonHuy (View view){
+        finish();
     }
 
     //Tạo menu với item thêm từ
