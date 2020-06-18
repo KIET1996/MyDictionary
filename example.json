@@ -4,42 +4,48 @@
       "word" : "Computer",
       "kind" : "noun",
       "mean" : "máy vi tính",
-	  "example": "I need some advice on which computer to buy.",
+    "example": "I need some advice on which computer to buy.",
+    "synonym": "processor, PC, CPU",
 	  "status":"0"
     },
     "word2" : {
       "word" : "Smile",
       "kind" : "noun",
       "mean" : "nụ cười",
-	  "example": "She has a nice smile.",
+    "example": "She has a nice smile.",
+    "synonym": "beam, grin",
 	  "status":"0"
     },
     "word3" : {
       "word" : "Sing",
       "kind" : "verb",
       "mean" : "ca, hát",
-	  "example": "She sang her baby to sleep every night.",
+    "example": "She sang her baby to sleep every night.",
+    "synonym": "croon, chant",
 	  "status":"1"
     },
     "word4" : {
       "word" : "Successful",
       "kind" : "adjective",
       "mean" : "có thành tựu, có kết quả",
-	  "example": "She runs a very successful computer business",
+    "example": "She runs a very successful computer business",
+    "synonym": "effective, fruitful",
 	  "status":"1"
     },
     "word5" : {
       "word" : "Concept",
       "kind" : "noun",
       "mean" : "ý tưởng chung, khái niệm chung",
-	  "example": "He can't grasp the basic concepts of mathematics.",
+    "example": "He can't grasp the basic concepts of mathematics.",
+    "synonym": "idea, conception, notion",
 	  "status":"0"
     },
     "word6" : {
       "word" : "Beauty",
       "kind" : "noun",
       "mean" : "vẻ đẹp, sắc đẹp",
-	  "example": "Beauty is only skin deep.",
+    "example": "Beauty is only skin deep.",
+    "synonym": "loveliness, good looks",
 	  "status":"0"
     },
     "word7" : {
@@ -56,14 +62,15 @@
       "mean" : "thuật toán",
     "example": "The general idea of the algorithm is as follows.",
     "synonym": "algebraic, algebraically",
-	  "status":"1"
+	  "status":"0"
     },
     "word9" : {
       "word" : "Study",
       "kind" : "verb",
       "mean" : "học, nghiên cứu",
-	  "example": "Next term we will study plants and how they grow.",
-	  "status":"1"
+    "example": "Next term we will study plants and how they grow.",
+    "synonym": "learn, review, take in",
+	  "status":"0"
     },
     "word10" : {
       "word" : "Semester",
