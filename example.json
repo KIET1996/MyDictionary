@@ -1,5 +1,4 @@
 {
-  "words" : {
     "word1" : {
       "word" : "Computer",
       "kind" : "noun",
@@ -80,5 +79,5 @@
     "synonym": "graduate, academe",
 	  "status":"1"
     }
-  }
+  
 }
