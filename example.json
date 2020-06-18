@@ -6,6 +6,7 @@
       "kind" : "noun",
       "mean" : "máy vi tính",
 	  "example": "I need some advice on which computer to buy.",
+	  "synonym": "",
 	  "status":"0"
     },
     "word2" : {
@@ -13,6 +14,7 @@
       "kind" : "noun",
       "mean" : "nụ cười",
 	  "example": "She has a nice smile.",
+	  "synonym": "",
 	  "status":"0"
     },
     "word3" : {
@@ -20,6 +22,7 @@
       "kind" : "verb",
       "mean" : "ca, hát",
 	  "example": "She sang her baby to sleep every night.",
+	  "synonym": "",
 	  "status":"1"
     },
     "word4" : {
@@ -27,6 +30,7 @@
       "kind" : "adjective",
       "mean" : "có thành tựu, có kết quả",
 	  "example": "She runs a very successful computer business",
+	  "synonym": "",
 	  "status":"1"
     },
     "word5" : {
@@ -34,6 +38,7 @@
       "kind" : "noun",
       "mean" : "ý tưởng chung, khái niệm chung",
 	  "example": "He can't grasp the basic concepts of mathematics.",
+	  "synonym": "",
 	  "status":"0"
     },
     "word6" : {
@@ -41,6 +46,7 @@
       "kind" : "noun",
       "mean" : "vẻ đẹp, sắc đẹp",
 	  "example": "Beauty is only skin deep.",
+	  "synonym": "",
 	  "status":"0"
     },
     "word7" : {
