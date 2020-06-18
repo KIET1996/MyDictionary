@@ -1,31 +1,76 @@
 {
   "words" : {
     "word1" : {
-      "word" : "computer",
+      "word" : "Computer",
       "kind" : "noun",
       "mean" : "máy vi tính",
 	  "example": "I need some advice on which computer to buy.",
 	  "status":"0"
     },
     "word2" : {
-      "word" : "smile",
+      "word" : "Smile",
       "kind" : "noun",
       "mean" : "nụ cười",
 	  "example": "She has a nice smile.",
 	  "status":"0"
     },
     "word3" : {
-      "word" : "sing",
-      "kind" : "verd",
+      "word" : "Sing",
+      "kind" : "verb",
       "mean" : "ca, hát",
 	  "example": "She sang her baby to sleep every night.",
 	  "status":"1"
     },
     "word4" : {
-      "word" : "successful",
+      "word" : "Successful",
       "kind" : "adjective",
       "mean" : "có thành tựu, có kết quả",
 	  "example": "She runs a very successful computer business",
+	  "status":"1"
+    },
+    "word5" : {
+      "word" : "Concept",
+      "kind" : "noun",
+      "mean" : "ý tưởng chung, khái niệm chung",
+	  "example": "He can't grasp the basic concepts of mathematics.",
+	  "status":"0"
+    },
+    "word6" : {
+      "word" : "Beauty",
+      "kind" : "noun",
+      "mean" : "vẻ đẹp, sắc đẹp",
+	  "example": "Beauty is only skin deep.",
+	  "status":"0"
+    },
+    "word7" : {
+      "word" : "Develop",
+      "kind" : "verb",
+      "mean" : "phát triển, mở rộng",
+	  "example": "This exercise is designed to develop the shoulder and back muscles.",
+    "synonym": "grow, evolution, mature, overdeveloped",
+	  "status":"1"
+    },
+    "word8" : {
+      "word" : "Algorithm",
+      "kind" : "noun",
+      "mean" : "thuật toán",
+    "example": "The general idea of the algorithm is as follows.",
+    "synonym": "algebraic, algebraically",
+	  "status":"1"
+    },
+    "word9" : {
+      "word" : "Study",
+      "kind" : "verb",
+      "mean" : "học, nghiên cứu",
+	  "example": "Next term we will study plants and how they grow.",
+	  "status":"1"
+    },
+    "word10" : {
+      "word" : "Semester",
+      "kind" : "noun",
+      "mean" : "học kỳ",
+    "example": "First, students were able to read a full-length authentic text in the first semester.",
+    "synonym": "graduate, academe",
 	  "status":"1"
     }
   }
