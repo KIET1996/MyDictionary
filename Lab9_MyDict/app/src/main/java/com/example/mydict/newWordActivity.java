@@ -116,11 +116,12 @@ public class newWordActivity extends AppCompatActivity {
         }
 
         //mở màn hình thêm ở đây
+
         if(item.getItemId()==R.id.mnBackNew)
         {
-//            Intent intent = new Intent(this, MainActivity.class);
-//            startActivity(intent);
-            finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+//            finish();
         }
         return super.onOptionsItemSelected(item);
     }

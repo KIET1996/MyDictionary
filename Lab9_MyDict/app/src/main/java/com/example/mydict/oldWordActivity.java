@@ -133,9 +133,9 @@ public class oldWordActivity extends AppCompatActivity {
         //mở màn hình chua thuoc word
         if(item.getItemId()==R.id.mnBackOld)
         {
-//            Intent intent = new Intent(this, MainActivity.class);
-//            startActivity(intent);
-            finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+//            finish();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -51,7 +51,7 @@
                     android:focusable="auto"
                     android:gravity="center"
                     android:text="Đã thuộc từ"
-                    android:textColor="#D32F2F"
+                    android:textColor="#C62828"
                     android:textColorHighlight="#00796B"
                     android:textColorLink="#0097A7"
                     android:textSize="24sp" />
@@ -169,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
-                        android:background="@drawable/custom_button"
+                        android:background="@drawable/rounded_button_add"
                         android:onClick="updateWord"
                         android:text="Lưu"
                         android:textColor="#A7FFEB"

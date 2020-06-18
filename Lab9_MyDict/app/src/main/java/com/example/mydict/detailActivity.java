@@ -1,5 +1,6 @@
 package com.example.mydict;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,12 +32,15 @@ public class detailActivity extends AppCompatActivity {
     TextView txtWord, txtKind, txtMean, txtExample, txtSyn, txtStatus;
     CheckBox cbStatus;
     String wordID;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         addControls();
         getWorDetail();
+
 
     }
 
@@ -130,8 +134,9 @@ public class detailActivity extends AppCompatActivity {
                                 toast.show();
                             }
                         });
+                Intent intent = new Intent(detailActivity.this, MainActivity.class);
+                startActivity(intent);
 
-                finish();
             }
         });
 

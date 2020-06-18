@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -156,5 +159,22 @@ public class updateWordActivity extends AppCompatActivity {
         cbStatus=findViewById(R.id.cbStatus);
     }
 
+    //Tạo menu với item thêm từ
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu_sub,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId()==R.id.mnBack)
+        {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

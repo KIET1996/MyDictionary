@@ -32,20 +32,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="30sp" />
+                android:textColor="#286065"
+                android:textColorHighlight="#80CBC4"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Từ loại"
-                android:textSize="30sp" />
+                android:textColor="#C2185B"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/detailKind"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="#5A777A"
                 android:textSize="24sp" />
 
             <TextView
@@ -53,13 +59,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nghĩa từ"
-                android:textSize="24sp" />
+                android:textColor="#C2185B"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/detailMean"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="#5A777A"
                 android:textSize="24sp" />
 
             <TextView
@@ -67,13 +76,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Từ đông nghĩa"
-                android:textSize="24sp" />
+                android:textColor="#C2185B"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/detailSyn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="#5A777A"
                 android:textSize="24sp" />
 
             <TextView
@@ -81,7 +93,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ví dụ"
-                android:textSize="24sp" />
+                android:textColor="#C2185B"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/detailExample"
@@ -89,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage|textLongMessage|textMultiLine"
                 android:text="TextView"
+                android:textColor="#5A777A"
                 android:textSize="24sp" />
 
             <TextView
@@ -109,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:onClick="updateScreen"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/rounded_button_add"
                     android:text="Cập nhật"
                     android:layout_margin="10dp"
                     android:textColor="#A7FFEB"

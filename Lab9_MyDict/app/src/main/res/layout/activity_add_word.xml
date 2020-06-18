@@ -24,6 +24,7 @@
             android:overScrollMode="always"
             android:paddingLeft="10px"
             android:paddingRight="10px">
+
             <TextView
                 android:id="@+id/lbHeadAdd"
                 android:layout_width="match_parent"
@@ -32,7 +33,7 @@
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="Thêm từ mới"
-                android:textColor="#FFFFFF"
+                android:textColor="#ffffff"
                 android:textSize="30sp" />
 
             <TextView
@@ -41,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Nhập từ mới"
-                android:textColor="#512DA8"
+                android:textColor="#3B1C83"
                 android:textSize="24sp" />
 
             <EditText
@@ -53,6 +54,7 @@
                 android:hint="Nhập từ mới ở đây"
                 android:inputType="textPersonName"
                 android:padding="10dp"
+                android:textColorHighlight="#FFFFFF"
                 android:textSize="24sp" />
 
             <TextView
@@ -61,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Từ loại"
-                android:textColor="#512DA8"
+                android:textColor="#3B1C83"
                 android:textSize="24sp" />
 
             <EditText
@@ -81,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Nghĩa của từ"
-                android:textColor="#512DA8"
+                android:textColor="#3B1C83"
                 android:textSize="24sp" />
 
             <EditText
@@ -101,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Từ đồng nghĩa"
-                android:textColor="#512DA8"
+                android:textColor="#3B1C83"
                 android:textSize="24sp" />
 
             <EditText
@@ -121,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Ví dụ"
-                android:textColor="#512DA8"
+                android:textColor="#3B1C83"
                 android:textSize="24sp" />
 
             <EditText
@@ -149,10 +151,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/rounded_button_add"
+                    android:drawableTint="#03A1FF"
                     android:onClick="addNewWord"
                     android:text="Thêm từ"
-                    android:textColor="#A7FFEB"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -165,7 +168,7 @@
                     android:background="@drawable/button_cancel"
                     android:onClick="buttonHuy"
                     android:text="Hủy"
-                    android:textColor="#A7FFEB"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>

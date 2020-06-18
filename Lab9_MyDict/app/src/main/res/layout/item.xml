@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#98C1DA"
     android:padding="15dp">
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="?attr/colorButtonNormal"
+
+            app:cardBackgroundColor="#ffffff"
             app:cardCornerRadius="25dp">
 
                 <LinearLayout
@@ -24,9 +26,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:background="@android:color/holo_blue_bright"
+                            android:shadowColor="#FFFFFF"
                             android:text="TextView"
-                            android:textColor="@android:color/black"
+                            android:textColor="#286065"
                             android:textColorHighlight="#80CBC4"
                             android:textSize="30sp"
                             android:textStyle="bold" />
@@ -55,7 +57,7 @@
                                     android:layout_marginLeft="15dp"
                                     android:layout_marginRight="10dp"
                                     android:text="TextView"
-                                    android:textColor="#304FFE"
+                                    android:textColor="#5A777A"
                                     android:textSize="24sp" />
                         </LinearLayout>
 
@@ -82,7 +84,7 @@
                                     android:layout_marginLeft="15dp"
                                     android:layout_marginRight="10dp"
                                     android:text="TextView"
-                                    android:textColor="#304FFE"
+                                    android:textColor="#5A777A"
                                     android:textSize="24sp" />
                         </LinearLayout>
 
