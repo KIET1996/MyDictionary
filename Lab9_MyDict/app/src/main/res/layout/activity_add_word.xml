@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="false"
+    android:orientation="vertical"
+    android:scrollbarSize="5dp"
+    android:scrollbars="horizontal|vertical"
+    tools:context=".addWordActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fadeScrollbars="true"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:overScrollMode="always"
+            android:paddingLeft="10px"
+            android:paddingRight="10px">
+
+            <TextView
+                android:id="@+id/lbHeadAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0288D1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Thêm từ mới"
+                android:textColor="#ffffff"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/lbAddWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Nhập từ mới"
+                android:textColor="#3B1C83"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/addWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edit"
+                android:ems="10"
+                android:hint="Nhập từ mới ở đây"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/lbAddKind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Từ loại"
+                android:textColor="#3B1C83"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/addKind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edit"
+                android:ems="10"
+                android:hint="Ví dụ noun, adjective, verb,.."
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/lbAddMean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Nghĩa của từ"
+                android:textColor="#3B1C83"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/addMean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edit"
+                android:ems="10"
+                android:hint="Nghĩa của từ"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Từ đồng nghĩa"
+                android:textColor="#3B1C83"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/addSyn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edit"
+                android:ems="10"
+                android:hint="Nhập từ đồng nghĩa"
+                android:inputType="textLongMessage"
+                android:padding="10dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/lbAddExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Ví dụ"
+                android:textColor="#3B1C83"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/addExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edit"
+                android:ems="10"
+                android:hint="Đặt một câu với từ mới"
+                android:inputType="textLongMessage|textMultiLine"
+                android:padding="10dp"
+                android:textSize="24sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_button_add"
+                    android:drawableTint="#03A1FF"
+                    android:onClick="addNewWord"
+                    android:text="Thêm từ"
+                    android:textColor="#ffffff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/huy"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/button_cancel"
+                    android:onClick="buttonHuy"
+                    android:text="Hủy"
+                    android:textColor="#ffffff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
